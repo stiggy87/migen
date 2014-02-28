@@ -87,7 +87,7 @@ def _run_vivado(build_name, vivado_path, source, mode, vivado_commands):
 		xilinx_settings_file = os.path.join(vivado_path, tools_version, "settings{0}.sh".format(bits))
 		if not os.path.exists(xilinx_settings_file) and bits == 64:
 			# if we are on 64-bit system but the toolchain isn't, try the 32-bit env.
-			xilinx_settings_file = os.path.join(vivado_path, tools_version,, "settings32.sh")
+			xilinx_settings_file = os.path.join(vivado_path, tools_version, "settings32.sh")
 		build_script_contents += "source " + xilinx_settings_file + "\n"
 
 		# Vivado has TCL/Batch mode.
